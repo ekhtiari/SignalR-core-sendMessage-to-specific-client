@@ -8,5 +8,6 @@ namespace ServerSign.Models
     public static class Connection
     {
         public static string Id { get; set; }
+        public static string cleintId { get;  set; }
     }
 }

@@ -4,7 +4,7 @@ var connection = new signalR.HubConnectionBuilder().withUrl("https://localhost:5
 
 
 connection.start().catch(err => console.error(err.toString())).then(function () {
-    connection.invoke('getConnectionId')
+    connection.invoke('getConnectionId','12')
         .then(function (connectionId) {
             // Send the connectionId to controller
             console.log("connectionID: " + connectionId);

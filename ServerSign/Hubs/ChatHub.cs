@@ -10,8 +10,12 @@ namespace WebSignal.Hubs
     public class ChatHub : Hub
     {
 
-        public string GetConnectionId()
+        public string GetConnectionId(string clientId)
         {
+            //Console.WriteLine("client id recive is :"+clientId);
+            Connection.cleintId= clientId;
+            //Console.WriteLine("connection id is :"+Context.ConnectionId);
+            Console.WriteLine("get connectid");
             return Context.ConnectionId;
         }
 
@@ -26,6 +30,7 @@ namespace WebSignal.Hubs
 
         public override Task OnConnectedAsync()
         {
+            Console.WriteLine("on connected");
             var q = Context.ConnectionId;
             if (string.IsNullOrEmpty(Connection.Id))
             {
